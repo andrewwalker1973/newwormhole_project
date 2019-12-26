@@ -7,6 +7,7 @@ public class PlayerShips : MonoBehaviour
 
 
     StateManger theStateManager;
+    CameraController theCameraController;
 
     //added in for smooth move
     Vector3 targetPosition;
@@ -44,42 +45,12 @@ public class PlayerShips : MonoBehaviour
         targetPosition = this.transform.position;
 
         ThePlayers = GameObject.FindObjectOfType<Player>();
-        // who is actually playing ?
+        theCameraController = GameObject.FindObjectOfType<CameraController>();
 
-        // 0 = human
-        //1 = computer
-        //2 = not playing
-
-
-
-        if (ThePlayers.player1_hum_comp == 0 || ThePlayers.player1_hum_comp == 1)
-        {
-            Debug.Log("testingnew player id");
-
-
-        }
-
-    /*    if (ThePlayers.player2_hum_comp == 0 || ThePlayers.player2_hum_comp == 1)
-        {
-            countOfPlayersActuallyPlaying++;
-        }
-
-        if (ThePlayers.player3_hum_comp == 0 || ThePlayers.player3_hum_comp == 1)
-        {
-            countOfPlayersActuallyPlaying++;
-        }
-
-        if (ThePlayers.player4_hum_comp == 0 || ThePlayers.player4_hum_comp == 1)
-        {
-            countOfPlayersActuallyPlaying++;
-        }
-
-        NumberOfPlayers = countOfPlayersActuallyPlaying;
-*/
     }
-    
 
-    //  PlayerId
+
+
 
 
 
@@ -178,24 +149,39 @@ public class PlayerShips : MonoBehaviour
     void OnMouseUp()
     {
 
-       /* if (ThePlayers.player1_hum_comp == 0 || ThePlayers.player1_hum_comp == 1)
-        {
-            Debug.Log("testingnew player id player1 ");
-            PlayerId = 0;
-        }
 
-        if (ThePlayers.player4_hum_comp == 0 || ThePlayers.player4_hum_comp == 1)
-        {
-            Debug.Log("testingnew player id player1 ");
-            PlayerId = 1;
-        }
-*/
+
+
         if (theStateManager.CurrentPlayerId != PlayerId)
         {
             return;  // its not my turn
 
         }
 
+        // test to see if I can get the camera to move to different ships at player turn
+
+  /*      if (this.PlayerId == 0)
+        {
+            // theCameraController.target = this.transform.name(Ship1};
+            theCameraController.target = GameObject.FindGameObjectWithTag("Player1").transform;
+        }
+        if (this.PlayerId == 1)
+        {
+            // theCameraController.target = this.transform.name(Ship1};
+            theCameraController.target = GameObject.FindGameObjectWithTag("Player2").transform;
+        }
+
+        if (this.PlayerId == 2)
+        {
+            // theCameraController.target = this.transform.name(Ship1};
+            theCameraController.target = GameObject.FindGameObjectWithTag("Player3").transform;
+        }
+        if (this.PlayerId == 3)
+        {
+            // theCameraController.target = this.transform.name(Ship1};
+            theCameraController.target = GameObject.FindGameObjectWithTag("Player4").transform;
+        }
+*/
         if (theStateManager.IsDoneRolling == false)
         {
             //we cant move yet

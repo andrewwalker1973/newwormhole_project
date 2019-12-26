@@ -13,11 +13,11 @@ GameObject:
   - component: {fileID: 163045134}
   m_Layer: 0
   m_Name: Ship4
-  m_TagString: Untagged
+  m_TagString: Player4
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2331164353387492151
 Transform:
   m_ObjectHideFlags: 0
@@ -62,7 +62,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startingTile: {fileID: 0}
-  PlayerId: 4
+  PlayerId: 3
 --- !u!64 &7641319553919647845
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -94,7 +94,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: f24986c5005449f4e96046f5edb103a7, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 70
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: f24986c5005449f4e96046f5edb103a7, type: 3}
       propertyPath: m_LocalPosition.z

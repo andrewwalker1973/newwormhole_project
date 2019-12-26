@@ -8,17 +8,23 @@ public class StateManger : MonoBehaviour
     void Start()
     {
         ThePlayers = GameObject.FindObjectOfType<Player>();
+        ThePlayerships = GameObject.FindObjectOfType<PlayerShips>();
+    //    theCameraController = GameObject.FindObjectOfType<CameraController>();
+
         // who is actually playing ?
-        
+
         // 0 = human
         //1 = computer
         //2 = not playing
 
-           
+        ThePlayerships.PlayerId = 0;
 
-            if (ThePlayers.player1_hum_comp == 0 || ThePlayers.player1_hum_comp == 1)
+        if (ThePlayers.player1_hum_comp == 0 || ThePlayers.player1_hum_comp == 1)
             {
                 countOfPlayersActuallyPlaying++;
+          //  ThePlayerships.PlayerId ++;
+                
+
             
             
             }
@@ -26,24 +32,27 @@ public class StateManger : MonoBehaviour
             if (ThePlayers.player2_hum_comp == 0 || ThePlayers.player2_hum_comp == 1)
             {
                 countOfPlayersActuallyPlaying++;
-            }
+            ThePlayerships.PlayerId++;
+        }
 
             if (ThePlayers.player3_hum_comp == 0 || ThePlayers.player3_hum_comp == 1)
             {
                 countOfPlayersActuallyPlaying++;
-            }
+            ThePlayerships.PlayerId++;
+        }
 
             if (ThePlayers.player4_hum_comp == 0 || ThePlayers.player4_hum_comp == 1)
             {
                 countOfPlayersActuallyPlaying++;
-            }
+            ThePlayerships.PlayerId++;
+        }
 
         NumberOfPlayers = countOfPlayersActuallyPlaying;
         Debug.Log("NumberOfPlayers" + NumberOfPlayers);
 
-
-
         
+
+
     }
     Player ThePlayers;
 
@@ -57,11 +66,15 @@ public class StateManger : MonoBehaviour
 
     int countOfPlayersActuallyPlaying = 0;
 
+    PlayerShips ThePlayerships;
+  //  CameraController theCameraController;
+
 
     public void NewTurn()
     {
-     
+
         
+
         //start of a players turn
         IsDoneRolling = false;
         IsDoneClicking = false;

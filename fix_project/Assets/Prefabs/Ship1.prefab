@@ -14,11 +14,11 @@ GameObject:
   - component: {fileID: 4711395420959845122}
   m_Layer: 0
   m_Name: Ship1
-  m_TagString: Player
+  m_TagString: Player1
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4580132789385761561
 Transform:
   m_ObjectHideFlags: 0
@@ -63,6 +63,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startingTile: {fileID: 0}
+  PlayerId: 0
 --- !u!111 &4711395420959845122
 Animation:
   m_ObjectHideFlags: 0
@@ -73,8 +74,9 @@ Animation:
   m_Enabled: 1
   serializedVersion: 3
   m_Animation: {fileID: 7400000, guid: 256f597f409116d4ebfa38d905c47186, type: 2}
-  m_Animations: []
-  m_WrapMode: 0
+  m_Animations:
+  - {fileID: 7400000, guid: 256f597f409116d4ebfa38d905c47186, type: 2}
+  m_WrapMode: 2
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
   m_CullingType: 0
@@ -95,7 +97,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4677498218072188, guid: 69322b09a32e0e84b80c408b4827056d, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 5
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 4677498218072188, guid: 69322b09a32e0e84b80c408b4827056d, type: 3}
       propertyPath: m_LocalPosition.z
