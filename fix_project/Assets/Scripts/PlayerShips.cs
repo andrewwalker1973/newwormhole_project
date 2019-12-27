@@ -24,6 +24,7 @@ public class PlayerShips : MonoBehaviour
 
 
 
+
     // added into handle player moving off board
     bool scoreMe = false;
 
@@ -47,13 +48,16 @@ public class PlayerShips : MonoBehaviour
         ThePlayers = GameObject.FindObjectOfType<Player>();
         theCameraController = GameObject.FindObjectOfType<CameraController>();
 
+
+  
+        
+
+
     }
 
 
 
-
-
-
+    
 
 
 
@@ -160,7 +164,7 @@ public class PlayerShips : MonoBehaviour
 
         // test to see if I can get the camera to move to different ships at player turn
 
-  /*      if (this.PlayerId == 0)
+     /* if (this.PlayerId == 0)
         {
             // theCameraController.target = this.transform.name(Ship1};
             theCameraController.target = GameObject.FindGameObjectWithTag("Player1").transform;

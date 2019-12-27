@@ -9,7 +9,7 @@ public class StateManger : MonoBehaviour
     {
         ThePlayers = GameObject.FindObjectOfType<Player>();
         ThePlayerships = GameObject.FindObjectOfType<PlayerShips>();
-    //    theCameraController = GameObject.FindObjectOfType<CameraController>();
+        //    theCameraController = GameObject.FindObjectOfType<CameraController>();
 
         // who is actually playing ?
 
@@ -17,43 +17,63 @@ public class StateManger : MonoBehaviour
         //1 = computer
         //2 = not playing
 
-        ThePlayerships.PlayerId = 0;
+  /*   ThePlayerships.PlayerId = -1; // try set it to set player 1 as playerid 0 
+      //  CurrentPlayerId = 0; 
+
 
         if (ThePlayers.player1_hum_comp == 0 || ThePlayers.player1_hum_comp == 1)
-            {
-                countOfPlayersActuallyPlaying++;
-          //  ThePlayerships.PlayerId ++;
-                
-
+        {
+            countOfPlayersActuallyPlaying++;
+            //        ThePlayerships.PlayerId ++;
             
-            
-            }
+           
 
-            if (ThePlayers.player2_hum_comp == 0 || ThePlayers.player2_hum_comp == 1)
-            {
-                countOfPlayersActuallyPlaying++;
-            ThePlayerships.PlayerId++;
+
+            Debug.Log(" player1");
+            Debug.Log(" player1 - countOfPlayersActuallyPlaying " + countOfPlayersActuallyPlaying);
+            Debug.Log(" player1 - ThePlayerships.PlayerId " + ThePlayerships.PlayerId);
+
         }
 
-            if (ThePlayers.player3_hum_comp == 0 || ThePlayers.player3_hum_comp == 1)
-            {
-                countOfPlayersActuallyPlaying++;
-            ThePlayerships.PlayerId++;
+        if (ThePlayers.player2_hum_comp == 0 || ThePlayers.player2_hum_comp == 1)
+        {
+            countOfPlayersActuallyPlaying++;
+            //         ThePlayerships.PlayerId++;
+         //   ThePlayerships.PlayerId = 11;
+
+            Debug.Log(" player1");
+            Debug.Log(" player1 - countOfPlayersActuallyPlaying " + countOfPlayersActuallyPlaying);
+            Debug.Log(" player1 - ThePlayerships.PlayerId " + ThePlayerships.PlayerId);
+
         }
 
-            if (ThePlayers.player4_hum_comp == 0 || ThePlayers.player4_hum_comp == 1)
-            {
-                countOfPlayersActuallyPlaying++;
-            ThePlayerships.PlayerId++;
+        if (ThePlayers.player3_hum_comp == 0 || ThePlayers.player3_hum_comp == 1)
+        {
+            countOfPlayersActuallyPlaying++;
+     //       ThePlayerships.PlayerId++;
+
+            Debug.Log(" player1");
+            Debug.Log(" player1 - countOfPlayersActuallyPlaying " + countOfPlayersActuallyPlaying);
+            Debug.Log(" player1 - ThePlayerships.PlayerId " + ThePlayerships.PlayerId);
+        }
+
+        if (ThePlayers.player4_hum_comp == 0 || ThePlayers.player4_hum_comp == 1)
+        {
+            countOfPlayersActuallyPlaying++;
+     //       ThePlayerships.PlayerId++;
+            Debug.Log(" player1");
+            Debug.Log(" player1 - countOfPlayersActuallyPlaying " + countOfPlayersActuallyPlaying);
+            Debug.Log(" player1 - ThePlayerships.PlayerId " + ThePlayerships.PlayerId);
         }
 
         NumberOfPlayers = countOfPlayersActuallyPlaying;
         Debug.Log("NumberOfPlayers" + NumberOfPlayers);
 
-        
-
-
+       // CurrentPlayerId = 0;
+       */
     }
+
+
     Player ThePlayers;
 
     public int NumberOfPlayers = 4; //max number of players playing
@@ -64,7 +84,9 @@ public class StateManger : MonoBehaviour
     public bool IsDoneClicking = false; //have we finished clicking
     public bool IsDoneAnimating = false; // Have we finshed moving
 
-    int countOfPlayersActuallyPlaying = 0;
+   
+
+  //  int countOfPlayersActuallyPlaying = 0;
 
     PlayerShips ThePlayerships;
   //  CameraController theCameraController;
@@ -80,8 +102,10 @@ public class StateManger : MonoBehaviour
         IsDoneClicking = false;
         IsDoneAnimating = false;
 
+
+     
         // TODO move to next player
-            CurrentPlayerId = (CurrentPlayerId + 1) % NumberOfPlayers;   // episode 6 20:56   trys to make sure on the number of players
+        CurrentPlayerId = (CurrentPlayerId + 1) % NumberOfPlayers;   // episode 6 20:56   trys to make sure on the number of players
 
               
 
