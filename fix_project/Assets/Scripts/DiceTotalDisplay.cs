@@ -8,11 +8,13 @@ public class DiceTotalDisplay : MonoBehaviour
 {
 
   StateManger theStateManager;
+  
 
     // Start is called before the first frame update
     void Start()
     {
         theStateManager = GameObject.FindObjectOfType<StateManger>();
+        
     }
 
     // Update is called once per frame
@@ -20,7 +22,7 @@ public class DiceTotalDisplay : MonoBehaviour
     {
         if (theStateManager.IsDoneRolling == false)
         {
-            GetComponent<TMP_Text>().text = "Dice Total =  ?";
+            GetComponent<TMP_Text>().text = "Dice Total =  ?";            
         }
         else
         {

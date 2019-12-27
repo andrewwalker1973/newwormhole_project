@@ -76,7 +76,7 @@ public class StateManger : MonoBehaviour
 
     Player ThePlayers;
 
-    public int NumberOfPlayers = 4; //max number of players playing
+    public int NumberOfPlayers = 2; //max number of players playing
     public int CurrentPlayerId = 0;  //set current playerid = 0 Ie - Player1
     public int DiceTotal;           // Total all dice rolls
 

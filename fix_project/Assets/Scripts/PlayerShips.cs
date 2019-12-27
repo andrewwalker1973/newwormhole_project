@@ -35,6 +35,7 @@ public class PlayerShips : MonoBehaviour
     bool isAnimating = false;
 
     Player ThePlayers;
+  //  DiceRoller theDiceRoller;
 
 
 
@@ -47,10 +48,11 @@ public class PlayerShips : MonoBehaviour
 
         ThePlayers = GameObject.FindObjectOfType<Player>();
         theCameraController = GameObject.FindObjectOfType<CameraController>();
+    //    theDiceRoller = GameObject.FindObjectOfType<DiceRoller>();
 
 
-  
-        
+
+
 
 
     }
@@ -138,6 +140,7 @@ public class PlayerShips : MonoBehaviour
             Debug.Log("Done animating.");
             this.isAnimating = false;
             theStateManager.IsDoneAnimating = true;
+         //   theDiceRoller.TurnEnded();
 
 
 
@@ -263,8 +266,26 @@ public class PlayerShips : MonoBehaviour
         theStateManager.IsDoneClicking = true;
         this.isAnimating = true;
 
+    }
 
+    bool CanLegallyMoveTo(Tile destinationTile)
+    {
+        // does the tilealready have a stone - not needed for me
+        // is this one of our stones - not needed for me
+        // is this a safe tile for enemy ?
+        
+        //is the tile empty
+        if (destinationTile.PlayerShips == null)
+        {
+            return true;
+        }
 
+        if (destinationTile.PlayerShips.PlayerId == this.PlayerId)
+        {
+            // we cant land on one of our stones
+            return false;
 
+        }
+        return true;
     }
 }

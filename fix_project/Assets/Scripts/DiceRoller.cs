@@ -22,6 +22,7 @@ public class DiceRoller : MonoBehaviour
         //AW find a way to set dice image to blank
         //   anim = GetComponent<Animator>();
 
+       
     }
 
     public int[] DiceValues;        // int of all dice values
@@ -53,7 +54,12 @@ public class DiceRoller : MonoBehaviour
 
     }
 
-
+ //   public void TurnEnded()
+ //   {
+ //       Debug.Log("HI");
+ //      this.transform.GetChild(0).GetComponent<Image>().sprite = DiceBlank[Random.Range(0, DiceImageOne.Length)];
+         
+  //  }
  
 
     public void RollTheDice()
@@ -65,10 +71,10 @@ public class DiceRoller : MonoBehaviour
         }
 
         theStateManager.DiceTotal = 0;
-        
-   
+    //    this.transform.GetChild(0).GetComponent<Image>().sprite = DiceBlank[Random.Range(0, DiceImageOne.Length)];
 
-    
+
+
         DiceFaceImage = GetComponent<Image>();
         
         //AW add in amim or something to make it show the dice is ready to roll

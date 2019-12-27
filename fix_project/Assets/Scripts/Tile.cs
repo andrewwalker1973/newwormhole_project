@@ -14,6 +14,7 @@ public class Tile : MonoBehaviour
     }
 
     public Tile[] NextTiles;
+    public PlayerShips PlayerShips;
 
     // Update is called once per frame
     void Update()
